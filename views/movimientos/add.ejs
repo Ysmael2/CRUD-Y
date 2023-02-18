@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Nuevo Mov.</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container" style="margin-top: 50px;">
+
+	
+
+    <div class="card">
+    	<div class="card-header">
+			Agregar un Nuevo Movimiento!
+		</div>
+        <div class="card-body">
+            <form action="/movimientos/add" method="post">
+                <div class="form-group">
+                    <label>Descripcion:</label>
+                    <input type="text" class="form-control" name="descripcion" value="<%= descripcion %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Monto:</label>
+                    <input type="number" class="form-control" name="monto" value="<%= monto %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Destino:</label>
+                    <input type="text" class="form-control" name="destino" value="<%= destino %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Agregar"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Movimientos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container" style="margin-top: 50px;">
+
+   
+
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Movimientos</a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/movimientos/add">Nuevo Mov!</a>
+                </li>
+            </ul>
+        </div>
+    <div class="card-body">
+
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Destino</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= data[i].id%></th>
+                    <td><%= data[i].descripcion%></td>
+                    <td><%= data[i].monto%>,00 Bs D</td>
+                    <td><%= data[i].destino%></td>
+                    <td>
+                        
+                        <a class="btn btn-danger delete" onclick="return alert('Estas seguro?')" href="../movimientos/delete/<%=data[i].id%>">Eliminar</a>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+
+        <!-- Si no hay nada-->
+        <% data %>
+        <% if(!data.length) { %>
+            <p class="text-center">Aun no hay Movimientos!</p>
+        <% } %>
+
+        </div>
+    </div>
+</body>
+</html>
